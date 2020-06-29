@@ -1,0 +1,21 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835";
+
+	fragment@0 {
+		target = <&i2c_arm>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			kt0913@35 {
+				compatible = "ktm,kt0913";
+				reg = <0x35>;
+				ktm,anti-pop = <0x01>;
+				ktm,refclk = <0x00>;
+				status = "okay";
+			};
+		};
+	};
+};
