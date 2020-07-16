@@ -12,6 +12,7 @@ To make the kernel module and insert it on the kernel, just run:
 make
 sudo insmod radio-kt0913.ko
 ```
+
 To remove it, just run:
 ```
 sudo rmmod radio-kt0913
@@ -19,11 +20,13 @@ sudo rmmod radio-kt0913
 
 ### RaspberryPi4
 If you happen to be using this chip on a RaspberryPi4 (i.e. i2c overlay enabled, and the KT0913 connected to the I2C pins), you can make usage of the additional targets of the Makefile, as follows:
+
 ```
 make
 sudo make rpi4-install
 ```
-To remove it:
+
+To remove it from the kernel and the modules:
 ```
 sudo make rpi4-clean
 ```
@@ -32,3 +35,4 @@ sudo make rpi4-clean
 Since the V4L2 interface is standard, you can use any application that knows how to interface with a tuner.
 I suggest using `radio`, a ncurses-based tuner app, which comes from the [xawtv](https://linuxtv.org/wiki/index.php/Xawtv#Associated_Utilities) package. Usually `sudo apt install -y radio` does it under a Ubuntu/Debian distro.
 You can use any other app, like the ones described on [LinuxTV's wiki](https://linuxtv.org/wiki/index.php/Radio_Listening_Software).
+
